@@ -306,7 +306,7 @@ public class Cliente extends JFrame {
 			@Override
 			public void keyTyped(KeyEvent e) {
 
-				// validaÁ„o (aceita somente os caracteres da String)
+				// valida√ß√£o (aceita somente os caracteres da String)
 				String caracteres = "0987654321.";
 				if (!caracteres.contains(e.getKeyChar() + "")) {
 					e.consume();
@@ -353,13 +353,13 @@ public class Cliente extends JFrame {
 		try {
 			Connection con = dao.conectar();
 			if (con == null) {
-				System.out.println("Erro de conex„o");
+				System.out.println("Erro de conex√£o");
 
 			} else {
 				System.out.println("Banco conectado!");
 
 			}
-			// Nunca esequcer de encerrar a conex„o
+			// Nunca esequcer de encerrar a conex√£o
 			con.close();
 
 		} catch (Exception e) {
@@ -430,7 +430,7 @@ public class Cliente extends JFrame {
 			JOptionPane.showMessageDialog(null, "Preencha o Numero do Local");
 			txtEmail.requestFocus();
 		} else if (txtEndereco.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Preencha o EndereÁo");
+			JOptionPane.showMessageDialog(null, "Preencha o Endere√ßo");
 			txtEndereco.requestFocus();
 		} else if (txtZap.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Preencha o numero de WhatsApp");
@@ -468,26 +468,26 @@ public class Cliente extends JFrame {
 
 	private void excluirCliente() {
 		// System.out.println("teste de botao excluir);
-		// validaÁ„o
-		int confirma = JOptionPane.showConfirmDialog(null, "Confirma a exclus„o desde Cliente?", "Excluir Cliente",
+		// valida√ß√£o
+		int confirma = JOptionPane.showConfirmDialog(null, "Confirma a exclus√£o desde Cliente?", "Excluir Cliente",
 				JOptionPane.YES_NO_OPTION);
 		if (confirma == JOptionPane.YES_OPTION) {
 			String delete = "delete from cliente where idFor = ?";
 			try {
-				// abrir a conex„o
+				// abrir a conex√£o
 				Connection con = dao.conectar();
 				// preparar a query
 				PreparedStatement pst = con.prepareStatement(delete);
 				pst.setString(1, txtId.getText());
-				// execuatr o comandosql e confirmar a exclus„o
+				// execuatr o comandosql e confirmar a exclus√£o
 				int confirmaExcluir = pst.executeUpdate();
 				if (confirmaExcluir == 1) {
 					limpar();
 					JOptionPane.showMessageDialog(null, "Cliente excluido com sucesso");
 				} else {
-					JOptionPane.showMessageDialog(null, "Erro na exclus„o do Cliente");
+					JOptionPane.showMessageDialog(null, "Erro na exclus√£o do Cliente");
 				}
-				// encerrar a conex„o
+				// encerrar a conex√£o
 				con.close();
 			} catch (Exception e) {
 				System.out.println(e);
@@ -514,7 +514,7 @@ public class Cliente extends JFrame {
 			JOptionPane.showMessageDialog(null, "Preencha o Numero do Local");
 			txtEmail.requestFocus();
 		} else if (txtEndereco.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Preencha o EndereÁo");
+			JOptionPane.showMessageDialog(null, "Preencha o Endere√ßo");
 			txtEndereco.requestFocus();
 		} else if (txtZap.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(null, "Preencha o numero de WhatsApp");
@@ -524,9 +524,9 @@ public class Cliente extends JFrame {
 			// System.out.println("teste adicionar ");
 			String create = "insert into cliente(nome, email, numero, Endereco, complemento, bairro, cidade, zap, cep) values(?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			try {
-				// abrir a conex„o
+				// abrir a conex√£o
 				Connection con = dao.conectar();
-				// Preparar a querry(substituiÁ„o)
+				// Preparar a querry(substitui√ß√£o)
 				PreparedStatement pst = con.prepareStatement(create);
 				pst.setString(1, txtNome.getText());
 				pst.setString(2, txtEmail.getText());
@@ -538,7 +538,7 @@ public class Cliente extends JFrame {
 				pst.setString(8, txtZap.getText());
 				pst.setString(9, txtCep.getText());
 
-				// executar a query e confimar inserÁ„o no banco
+				// executar a query e confimar inser√ß√£o no banco
 				int confirma = pst.executeUpdate();
 				// System.out.println(confirma);
 				if (confirma == 1) {
@@ -554,7 +554,7 @@ public class Cliente extends JFrame {
 
 			} catch (java.sql.SQLIntegrityConstraintViolationException e1) {
 				System.out.println(e1);
-				JOptionPane.showMessageDialog(null, "CPF j· em uso");
+				JOptionPane.showMessageDialog(null, "CPF j√° em uso");
 				txtEmail.setText(null);
 				txtEmail.requestFocus();
 			} catch (Exception e2) {
@@ -626,6 +626,7 @@ public class Cliente extends JFrame {
 		btnCreate.setEnabled(true);
 		btnUpdate.setEnabled(false);
 		btnDelete.setEnabled(false);
+		((DefaultTableModel) table.getModel()).setRowCount(0);
 
 	}
 }// fim do codigo
