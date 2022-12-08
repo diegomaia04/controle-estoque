@@ -104,11 +104,20 @@ create table fornecedores (
 );
 
 
-insert into fornecedores (razaoSocial, fantasia, cnpj, ie, cep, endereco, numero, complemento, bairro, cidade, uf, nomeContato, fone, zap, email, site, obs) values ('Kalunga', 'Kalunga', '43.283.811/0099-76', '206292929110', '70711-000', 'Rua dos Kalungas', '1000', '', 'Distrito Asa Norte', 'Brasilia', 'DF', 'Luiz Carlos', '1234-5678', '1234-0000', 'luiz.carlos@kalunga.com.br', 'www.kalunga.com.br', 'Pode pá');
-insert into fornecedores (razaoSocial, fantasia, cnpj, ie, cep, endereco, numero, complemento, bairro, cidade, uf, nomeContato, fone, zap, email, site, obs) values ('Kalango', 'Kalango', '44.283.811/0089-76', '207293029110', '70712-000', 'Rua dos Calangos', '2000', '', 'Calango do Norte', 'Amapá', 'AP', 'João Pedro', '1111-0000', '2222-0000', 'joao.pedro@kalango.com.br', 'www.kalango.com.br', 'Calanguinho');
-insert into fornecedores (razaoSocial, fantasia, cnpj, ie, cep, endereco, numero, complemento, bairro, cidade, uf, nomeContato, fone, zap, email, site, obs) values ('Kabum', 'Kabum', '45.283.811/0059-76', '207293329111', '70713-000', 'Rua do Kabum', '3000', '', 'Cambuquira', 'Londrina', 'PR', 'Maria do Carmo', '3333-0000', '4444-0000', 'maria.carmo@kabum.com.br', 'www.kabum.com.br', 'Explosao');
-insert into fornecedores (razaoSocial, fantasia, cnpj, ie, cep, endereco, numero, complemento, bairro, cidade, uf, nomeContato, fone, zap, email, site, obs) values ('Furacão', 'Furacao', '46.283.811/0059-76', '206292929112', '80711-000', 'Rua das Explosões', '4000', '', 'Explosivo', 'Blumenau', 'SC', 'Carlos Magno', '5555-0000', '6666-0000', 'carlos.magno@furacao.com.br', 'www.furacao.com.br', 'Ventania');
-insert into fornecedores (razaoSocial, fantasia, cnpj, ie, cep, endereco, numero, complemento, bairro, cidade, uf, nomeContato, fone, zap, email, site, obs) values ('Fusca', 'Fusca', '47.283.811/0059-76', '206292929113', '90711-000', 'Rua dos carros', '5000', '', 'Fuscão Preto', 'Rocinha', 'RJ', 'Zé Pequeno', '7777-0000', '8888-0000', 'ze.pequeno@fusca.com.br', 'www.fusca.com.br', 'Vrum');
+insert into fornecedores (razaoSocial, fantasia, cnpj, ie, cep, endereco, numero, complemento, bairro, cidade, uf, nomeContato, fone, zap, email, site, obs) 
+values ('Kalunga', 'Kalunga', '43.283.811/0099-76', '206292929110', '70711-000', 'Rua dos Kalungas', '1000', '', 'Distrito Asa Norte', 'Brasilia', 'DF', 'Luiz Carlos', '1234-5678', '1234-0000', 'luiz.carlos@kalunga.com.br', 'www.kalunga.com.br', 'Pode pá');
+
+insert into fornecedores (razaoSocial, fantasia, cnpj, ie, cep, endereco, numero, complemento, bairro, cidade, uf, nomeContato, fone, zap, email, site, obs)
+values ('Kalango', 'Kalango', '44.283.811/0089-76', '207293029110', '70712-000', 'Rua dos Calangos', '2000', '', 'Calango do Norte', 'Amapá', 'AP', 'João Pedro', '1111-0000', '2222-0000', 'joao.pedro@kalango.com.br', 'www.kalango.com.br', 'Calanguinho');
+
+insert into fornecedores (razaoSocial, fantasia, cnpj, ie, cep, endereco, numero, complemento, bairro, cidade, uf, nomeContato, fone, zap, email, site, obs) 
+values ('Kabum', 'Kabum', '45.283.811/0059-76', '207293329111', '70713-000', 'Rua do Kabum', '3000', '', 'Cambuquira', 'Londrina', 'PR', 'Maria do Carmo', '3333-0000', '4444-0000', 'maria.carmo@kabum.com.br', 'www.kabum.com.br', 'Explosao');
+
+insert into fornecedores (razaoSocial, fantasia, cnpj, ie, cep, endereco, numero, complemento, bairro, cidade, uf, nomeContato, fone, zap, email, site, obs) 
+values ('Furacão', 'Furacao', '46.283.811/0059-76', '206292929112', '80711-000', 'Rua das Explosões', '4000', '', 'Explosivo', 'Blumenau', 'SC', 'Carlos Magno', '5555-0000', '6666-0000', 'carlos.magno@furacao.com.br', 'www.furacao.com.br', 'Ventania');
+
+insert into fornecedores (razaoSocial, fantasia, cnpj, ie, cep, endereco, numero, complemento, bairro, cidade, uf, nomeContato, fone, zap, email, site, obs) 
+values ('Fusca', 'Fusca', '47.283.811/0059-76', '206292929113', '90711-000', 'Rua dos carros', '5000', '', 'Fuscão Preto', 'Rocinha', 'RJ', 'Zé Pequeno', '7777-0000', '8888-0000', 'ze.pequeno@fusca.com.br', 'www.fusca.com.br', 'Vrum');
 
 select * from fornecedores where idFor = 15;
 select * from fornecedores;
@@ -123,7 +132,7 @@ delete from fornecedores where idFor = '2';
 create table cliente (
 idFor int primary key auto_increment,
 nome varchar (30) not null,
-cpf varchar (50) not null,
+Email varchar (50) not null,
 numero varchar (30) not null,
 Endereco varchar (30) not null,
 complemento varchar(20),
@@ -139,8 +148,8 @@ drop table cliente;
 
 -- CRUD da tabela de clientes
 
-insert into cliente(nome, cpf, numero, Endereco, complemento, bairro, cidade, zap, cep) 
-values('Diego Maia', '35905128812', '46', 'Rua Francisco Gouveia', 'perto da igreja', 'Mooca', 'São Paulo', '953336542', '13245789');
+insert into cliente(nome, email, numero, Endereco, complemento, bairro, cidade, zap, cep) 
+values('Diego Maia', 'diego@gmail.com', '46', 'Rua Francisco Gouveia', 'perto da igreja', 'Mooca', 'São Paulo', '953336542', '13245789');
 
 select * from cliente;
 
@@ -219,14 +228,29 @@ select produtos.codigo as Código, produtos.produto,  produtos.custo as valor,
 fornecedores.fantasia as Fornecedor
 from produtos inner join fornecedores on produtos.idFor = fornecedores.idFor;
 
+select  Código, produtos.produto, valor, 
+ Fornecedor
+from produtos inner join fornecedores on produtos.idFor = fornecedores.idFor;
+
+
+
+
 -- relatorio 3(invetario de estoque)
 
 select sum(estoque * custo) as Total from produtos;
+
+
+
 
 -- relatorios 4(calcular o preço de vendas)
 
 select codigo as código, produto,custo,
 (custo + (custo * lucro)/100) as venda from produtos;
+
+select  código, produto,custo,
+(custo + (custo * lucro)/100) from produtos;
+
+
 
 -- relatorios 5(reposição de estoque)
 -- '%d/%m/%Y' (dd/mm/aaaa) '%d/%m/%y (dd/mm/yy'
@@ -244,7 +268,4 @@ from produtos where estoque < estoquemin;
 	
 -- relatorio 6 (produtos vencidos)
 
-select codigo as código, produto, localizacao as localização,
-date_format(dataval,'%d/%m/%Y') as data_validade,
-datediff(dataval, curdate()) as dias_vencidos
-from produtos where  datediff(dataval, curdate()) < 0
+select codigo, produto, localizacao,date_format(dataval,'%d/%m/%Y'),datediff(dataval, curdate()) from produtos where  datediff(dataval, curdate()) < 0
